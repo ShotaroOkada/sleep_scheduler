@@ -4,12 +4,13 @@ import Fonts from '../../utilsUI/Fonts';
 import { Rnd, DraggableData, Position } from 'react-rnd';
 import { DraggableEvent } from 'react-draggable';
 
-type props = {
+type Props = {
   scheduleName: string;
   background: string;
 }
 
-const Schedule = (props: props) => {
+// タイムラインに貼り付ける予定が書かれたブロック
+const Schedule: React.FC<Props> = (props) => {
   const { scheduleName, background } = props;
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
