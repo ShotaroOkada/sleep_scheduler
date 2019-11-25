@@ -9,8 +9,8 @@ const Times: string[] = [
 const TimeLine: React.FC = () => {
   return (
     <Wrapper>
-      {Times.map(time => {
-        return <Time time={time} />
+      {Times.map((time, index) => {
+        return <Time key={index} time={time} />
       })}
     </Wrapper>
   )

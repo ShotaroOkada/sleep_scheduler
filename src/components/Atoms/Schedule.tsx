@@ -25,8 +25,20 @@ const Schedule: React.FC<Props> = (props) => {
     setY(position.y);
   }
 
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.metaKey && e.key === 'c') {
+      console.log('command + c')
+    } else if (e.key === 'Backspace') {
+      console.log('delete');
+    } else {
+      return;
+    }
+  }
+
   return (
     <Wrapper
+      tabIndex={0}
+      onKeyDown={onKeyDown}
       background={background}
       position={{ x, y }}
       onDragStop={onDrag}
@@ -49,8 +61,9 @@ type WrapperProps = {
 
 const Wrapper = styled(Rnd)<WrapperProps>((props: WrapperProps) => `
   background: ${props.background};
-  font-family: ${Fonts.FamilyMairyo};
+  font-family: ${Fonts.FamilyRoboto};
   color: white;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
+  font-size: 13px;
 `)

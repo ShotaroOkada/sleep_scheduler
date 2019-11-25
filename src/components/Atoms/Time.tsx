@@ -20,12 +20,12 @@ const Time: React.FC<Props> = (props) => {
 export default Time;
 
 const Wrapper = styled.span`
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   &::after {
     content: "";
-    height: 1.0px;
+    height: 1px;
     width: 20vw;
     display: block;
     background: ${Colors.LightGray};
@@ -35,6 +35,7 @@ const Wrapper = styled.span`
 const TextTime = styled.span`
   width: 100px;
   text-align: right;
-  font-family: ${Fonts.FamilyMairyo};
+  font-family: ${Fonts.FamilyRoboto};
   color: ${Colors.LightGray};
+  font-size: 13px;
 `

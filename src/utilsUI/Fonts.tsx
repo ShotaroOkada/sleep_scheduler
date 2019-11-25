@@ -1,5 +1,6 @@
 enum Fonts {
-  FamilyMairyo = 'Mairyo'
+  FamilyMairyo = 'Mairyo',
+  FamilyRoboto = 'Roboto'
 }
 
 export default Fonts
