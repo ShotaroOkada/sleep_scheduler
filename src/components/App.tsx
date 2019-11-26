@@ -4,6 +4,7 @@ import Colors from '../utilsUI/Color';
 import TimeLine from './Molecules/TimeLine';
 import styled from 'styled-components';
 import Button from './Atoms/Button';
+import Form from './Atoms/From';
 
 const App: React.FC = () => {
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -17,7 +18,8 @@ const App: React.FC = () => {
   return (
     <Wrapper onKeyDown={onKeyDown} tabIndex={0}>
       <TimeLine />
-      <Schedule scheduleName='睡眠' background={Colors.RoyalBlue} />
+      {/* <Schedule scheduleName='睡眠' background={Colors.RoyalBlue} /> */}
+      <Form />
       <Button />
     </Wrapper>
   );

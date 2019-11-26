@@ -9,21 +9,22 @@ const Button: React.FC = () => {
     e.currentTarget.blur();
   }
   return (
-    <Wrapper onClick={onClick}>
+    <StyledButton onClick={onClick}>
       ＋ 予定を追加
-    </Wrapper>
+    </StyledButton>
   )
 }
 
 export default Button;
 
-const Wrapper = styled.button`
+const StyledButton = styled.button`
   font-size: ${Fonts.SizeDefault}px;
   color: ${Colors.LightGray};
   font-family: ${Fonts.FamilyRoboto};
   border-radius: 3px;
   text-decoration: none;
-  padding: 5px 7px 5px 7px;
+  padding: 5px 7px 3px 7px;
+  margin-left: 5px;
   &:focus {
     outline: none;
     background: ${Colors.WhiteSmoke}
