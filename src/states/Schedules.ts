@@ -3,6 +3,9 @@ export type Schedule = {
   background: string
 }
 
-type Schedules = Schedule[]
+type ScheduleState = {
+  schedules: Schedule[]
+  copiedSchedule: Schedule;
+}
 
-export default Schedules
+export default ScheduleState

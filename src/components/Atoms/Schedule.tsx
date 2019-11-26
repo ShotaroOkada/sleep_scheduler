@@ -4,17 +4,21 @@ import Fonts from '../../utilsUI/Fonts';
 import { Rnd, DraggableData, Position } from 'react-rnd';
 import { DraggableEvent } from 'react-draggable';
 import Colors from '../../utilsUI/Color';
+import { useDispatch } from 'react-redux';
+import { copiedSchedule, deleteSchedule } from '../../actions/Schedules/ActionCreator';
 
 type Props = {
   scheduleName: string;
   background: string;
+  index: number;
 }
 
 // タイムラインに貼り付ける予定が書かれたブロック
 const Schedule: React.FC<Props> = (props) => {
-  const { scheduleName, background } = props;
+  const { scheduleName, background, index } = props;
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const dispatch = useDispatch();
 
   const onDrag = (_: DraggableEvent, data: DraggableData) => {
     setX(data.x);
@@ -28,9 +32,9 @@ const Schedule: React.FC<Props> = (props) => {
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.metaKey && e.key === 'c') {
-      console.log('command + c')
+      dispatch(copiedSchedule({ name: scheduleName, background }))
     } else if (e.key === 'Backspace') {
-      console.log('delete');
+      dispatch(deleteSchedule({ index }))
     } else {
       return;
     }

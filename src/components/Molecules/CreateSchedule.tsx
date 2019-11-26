@@ -29,7 +29,7 @@ const CreateSchedule = () => {
 
   return (
     <Wrapper>
-      <Form onChange={onChange} />
+      <Form onChange={onChange} value={inputSchedule} />
       <Button onClick={onClick} />
     </Wrapper>
   )

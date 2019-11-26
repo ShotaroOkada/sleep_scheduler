@@ -5,12 +5,13 @@ import Fonts from '../../utilsUI/Fonts';
 
 type Props = {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  value: string;
 }
 
 const Form: React.FC<Props> = (props) => {
-  const { onChange } = props
+  const { onChange, value } = props
   return (
-    <StyledInput type='text' onChange={onChange} />
+    <StyledInput type='text' onChange={onChange} value={value} />
   )
 }
 

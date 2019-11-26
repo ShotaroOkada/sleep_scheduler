@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import schedules from './Schedules'
+import scheduleState from './Schedules'
 
 const rootReducer = combineReducers({
-  schedules
+  scheduleState
 })
 
 export default rootReducer;

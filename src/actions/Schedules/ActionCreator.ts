@@ -8,4 +8,8 @@ export const createSchedule = createAction(
 
 export const deleteSchedule = createAction(
   ScheduleActionType.DELETE_SCHEDULE
-)<{ taskIndex: number }>();
+)<{ index: number }>();
+
+export const copiedSchedule = createAction(
+  ScheduleActionType.COPIED_SCHEDULE
+)<Schedule>();
