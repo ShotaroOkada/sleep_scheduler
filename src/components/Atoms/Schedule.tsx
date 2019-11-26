@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Fonts from '../../utilsUI/Fonts';
 import { Rnd, DraggableData, Position } from 'react-rnd';
 import { DraggableEvent } from 'react-draggable';
+import Colors from '../../utilsUI/Color';
 
 type Props = {
   scheduleName: string;
@@ -65,5 +66,9 @@ const Wrapper = styled(Rnd)<WrapperProps>((props: WrapperProps) => `
   color: white;
   padding: 8px;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: ${Fonts.SizeDefault}px;
+  &:focus{
+    outline: none;
+    box-shadow: 2px 2px 4px ${Colors.LightGray};
+  }
 `)

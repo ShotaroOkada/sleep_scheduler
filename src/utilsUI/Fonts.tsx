@@ -1,6 +1,7 @@
 enum Fonts {
   FamilyMairyo = 'Mairyo',
-  FamilyRoboto = 'Roboto'
+  FamilyRoboto = 'Roboto',
+  SizeDefault = 13
 }
 
 export default Fonts

@@ -37,5 +37,5 @@ const TextTime = styled.span`
   text-align: right;
   font-family: ${Fonts.FamilyRoboto};
   color: ${Colors.LightGray};
-  font-size: 13px;
+  font-size: ${Fonts.SizeDefault}px;
 `

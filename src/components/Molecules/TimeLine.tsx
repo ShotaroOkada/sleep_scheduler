@@ -19,9 +19,12 @@ const TimeLine: React.FC = () => {
 export default TimeLine;
 
 const Wrapper = styled.div`
+  overflow: scroll;
   position: fixed;
-  bottom: 0;
   left: 50%;
   -webkit-transform : translateX(-50%);
   transform : translateX(-50%);
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
