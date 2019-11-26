@@ -3,9 +3,14 @@ import styled from 'styled-components';
 import Colors from '../../utilsUI/Color';
 import Fonts from '../../utilsUI/Fonts';
 
-const Form = () => {
+type Props = {
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+}
+
+const Form: React.FC<Props> = (props) => {
+  const { onChange } = props
   return (
-    <StyledInput type='text' />
+    <StyledInput type='text' onChange={onChange} />
   )
 }
 

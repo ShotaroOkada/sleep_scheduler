@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import Fonts from '../../utilsUI/Fonts';
 import Colors from '../../utilsUI/Color';
 
-const Button: React.FC = () => {
-  const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    e.currentTarget.blur();
-  }
+type Props = {
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
+const Button: React.FC<Props> = (props) => {
+  const { onClick } = props;
   return (
     <StyledButton onClick={onClick}>
       ＋ 予定を追加
