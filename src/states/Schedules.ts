@@ -3,10 +3,16 @@ export type SchedulePosition = {
   y: number
 }
 
+export type ScheduleSize = {
+  width: string | null,
+  height: string | null
+}
+
 export type Schedule = {
   name: string,
   background: string,
   position: SchedulePosition,
+  size: ScheduleSize
 }
 
 type ScheduleState = {

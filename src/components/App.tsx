@@ -14,7 +14,7 @@ const App: React.FC = () => {
       if (copiedSchedule.name === '') {
         return
       } else {
-        dispatch(createSchedule({ schedule: { name: copiedSchedule.name, background: copiedSchedule.background, position: { x: 0, y: 0 } } }));
+        dispatch(createSchedule({ schedule: { name: copiedSchedule.name, background: copiedSchedule.background, position: { x: 0, y: 0 }, size: { width: copiedSchedule.size.width, height: copiedSchedule.size.height } } }));
       }
     } else {
       return

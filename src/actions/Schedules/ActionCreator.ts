@@ -1,5 +1,5 @@
 import { createAction } from 'typesafe-actions';
-import { Schedule, SchedulePosition } from '../../states/Schedules';
+import { Schedule, SchedulePosition, ScheduleSize } from '../../states/Schedules';
 import ScheduleActionType from './ActionType';
 
 export const createSchedule = createAction(
@@ -20,4 +20,4 @@ export const positionChangeSchedule = createAction(
 
 export const sizeChangeSchedule = createAction(
   ScheduleActionType.SIZE_CHANGE_SCHEDULE
-)<{ index: number, position: SchedulePosition }>();
+)<{ index: number, position: SchedulePosition, size: ScheduleSize }>();

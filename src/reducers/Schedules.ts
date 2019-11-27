@@ -10,6 +10,10 @@ const initialState: ScheduleState = {
     position: {
       x: 0,
       y: 0
+    },
+    size: {
+      width: 'auto',
+      height: 'auto'
     }
   },
 }
@@ -40,7 +44,8 @@ export default function scheduleState(state: ScheduleState = initialState, actio
           {
             name: state.schedules[action.payload.index].name,
             background: state.schedules[action.payload.index].background,
-            position: action.payload.position
+            position: action.payload.position,
+            size: state.schedules[action.payload.index].size
           },
           ...state.schedules.slice(action.payload.index + 1)
         ]
@@ -50,6 +55,12 @@ export default function scheduleState(state: ScheduleState = initialState, actio
         ...state,
         schedules: [
           ...state.schedules.slice(0, action.payload.index),
+          {
+            name: state.schedules[action.payload.index].name,
+            background: state.schedules[action.payload.index].background,
+            position: action.payload.position,
+            size: action.payload.size
+          },
           ...state.schedules.slice(action.payload.index + 1)
         ]
       }
