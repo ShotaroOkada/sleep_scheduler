@@ -26,7 +26,7 @@ const Schedule: React.FC<Props> = (props) => {
   const [height, setHeight] = useState(size.height);
   const dispatch = useDispatch();
 
-  const onDrag = (_: DraggableEvent, data: DraggableData) => {
+  const onDrag = (e: DraggableEvent, data: DraggableData) => {
     if (x === data.x && y === data.y) {
       return
     }
@@ -35,7 +35,7 @@ const Schedule: React.FC<Props> = (props) => {
     dispatch(positionChangeSchedule({ index, position: { x: data.x, y: data.y } }))
   }
 
-  const onResize = (e: MouseEvent | TouchEvent, dir: ResizeDirection, ref: HTMLDivElement, delta: ResizableDelta, position: Position) => {
+  const onResizeStop = (e: MouseEvent | TouchEvent, dir: ResizeDirection, ref: HTMLDivElement, delta: ResizableDelta, position: Position) => {
     setX(position.x);
     setY(position.y);
     setWidth(ref.style.width);
@@ -64,7 +64,7 @@ const Schedule: React.FC<Props> = (props) => {
         height
       }}
       onDragStop={onDrag}
-      onResize={onResize}
+      onResizeStop={onResizeStop}
       enableResizing={{
         top: false, right: true, bottom: true, left: true,
         topRight: false, bottomRight: false, bottomLeft: false, topLeft: false
