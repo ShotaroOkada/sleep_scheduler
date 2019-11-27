@@ -36,6 +36,9 @@ const Schedule: React.FC<Props> = (props) => {
   }
 
   const onResizeStop = (e: MouseEvent | TouchEvent, dir: ResizeDirection, ref: HTMLDivElement, delta: ResizableDelta, position: Position) => {
+    if (width === ref.style.width && height === ref.style.height) {
+      return
+    }
     setX(position.x);
     setY(position.y);
     setWidth(ref.style.width);
@@ -67,7 +70,7 @@ const Schedule: React.FC<Props> = (props) => {
       onResizeStop={onResizeStop}
       enableResizing={{
         top: false, right: true, bottom: true, left: true,
-        topRight: false, bottomRight: false, bottomLeft: false, topLeft: false
+        topRight: false, bottomRight: true, bottomLeft: false, topLeft: false
       }}
     >
       {`${index}:${scheduleName}`}
