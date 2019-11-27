@@ -1,10 +1,10 @@
 import { createAction } from 'typesafe-actions';
-import { Schedule } from '../../states/Schedules';
+import { Schedule, SchedulePosition, ScheduleSize } from '../../states/Schedules';
 import ScheduleActionType from './ActionType';
 
 export const createSchedule = createAction(
   ScheduleActionType.CREATE_SCHEDULE
-)<Schedule>();
+)<{ schedule: Schedule }>();
 
 export const deleteSchedule = createAction(
   ScheduleActionType.DELETE_SCHEDULE
@@ -12,4 +12,12 @@ export const deleteSchedule = createAction(
 
 export const copiedSchedule = createAction(
   ScheduleActionType.COPIED_SCHEDULE
-)<Schedule>();
+)<{ schedule: Schedule }>();
+
+export const positionChangeSchedule = createAction(
+  ScheduleActionType.POSITION_CHANGE_SCHEDULE
+)<{ index: number, position: SchedulePosition }>();
+
+export const sizeChangeSchedule = createAction(
+  ScheduleActionType.SIZE_CHANGE_SCHEDULE
+)<{ index: number, position: SchedulePosition, size: ScheduleSize }>();

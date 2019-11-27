@@ -8,7 +8,7 @@ const Schedules: React.FC = () => {
   return (
     <div>
       {schedules.map((schedule, index) => {
-        return <Schedule key={`${index}:${schedule}`} scheduleName={schedule.name} background={schedule.background} index={index} />
+        return <Schedule key={`${index}:${schedule} x:${schedule.position.x} y:${schedule.position.y}`} scheduleName={schedule.name} background={schedule.background} index={index} position={schedule.position} size={schedule.size} />
       })}
     </div>
   )

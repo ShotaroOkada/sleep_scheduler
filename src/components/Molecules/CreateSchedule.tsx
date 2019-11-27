@@ -22,8 +22,7 @@ const CreateSchedule = () => {
     if (inputSchedule === '') {
       return
     }
-    console.log(inputSchedule)
-    dispatch(createSchedule({ name: inputSchedule, background: Colors.RoyalBlue }))
+    dispatch(createSchedule({ schedule: { name: inputSchedule, background: Colors.RoyalBlue, position: { x: 0, y: 0 }, size: { width: 'auto', height: 'auto' } } }))
     setInputSchedule('');
   }
 

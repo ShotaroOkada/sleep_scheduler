@@ -6,18 +6,26 @@ const initialState: ScheduleState = {
   schedules: [],
   copiedSchedule: {
     name: '',
-    background: ''
-  }
+    background: '',
+    position: {
+      x: 0,
+      y: 0
+    },
+    size: {
+      width: 'auto',
+      height: 'auto'
+    }
+  },
 }
 
-export default function scheduleState(state: ScheduleState = initialState, action: ScheduleAction) {
+export default function scheduleState(state: ScheduleState = initialState, action: ScheduleAction): ScheduleState {
   switch (action.type) {
     case ScheduleActionType.CREATE_SCHEDULE:
       return {
         ...state,
         schedules: [
           ...state.schedules,
-          action.payload
+          action.payload.schedule
         ]
       }
     case ScheduleActionType.DELETE_SCHEDULE:
@@ -28,11 +36,39 @@ export default function scheduleState(state: ScheduleState = initialState, actio
           ...state.schedules.slice(action.payload.index + 1)
         ]
       }
+    case ScheduleActionType.POSITION_CHANGE_SCHEDULE:
+      return {
+        ...state,
+        schedules: [
+          ...state.schedules.slice(0, action.payload.index),
+          {
+            name: state.schedules[action.payload.index].name,
+            background: state.schedules[action.payload.index].background,
+            position: action.payload.position,
+            size: state.schedules[action.payload.index].size
+          },
+          ...state.schedules.slice(action.payload.index + 1)
+        ]
+      }
+    case ScheduleActionType.SIZE_CHANGE_SCHEDULE:
+      return {
+        ...state,
+        schedules: [
+          ...state.schedules.slice(0, action.payload.index),
+          {
+            name: state.schedules[action.payload.index].name,
+            background: state.schedules[action.payload.index].background,
+            position: action.payload.position,
+            size: action.payload.size
+          },
+          ...state.schedules.slice(action.payload.index + 1)
+        ]
+      }
     case ScheduleActionType.COPIED_SCHEDULE:
       return {
         ...state,
         copiedSchedule: {
-          ...action.payload
+          ...action.payload.schedule
         }
       }
     default:

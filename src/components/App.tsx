@@ -1,5 +1,4 @@
 import React from 'react';
-import TimeLine from './Molecules/TimeLine';
 import styled from 'styled-components';
 import CreateSchedule from './Molecules/CreateSchedule';
 import Schedules from './Organisms/Schedules';
@@ -15,7 +14,7 @@ const App: React.FC = () => {
       if (copiedSchedule.name === '') {
         return
       } else {
-        dispatch(createSchedule({ name: copiedSchedule.name, background: copiedSchedule.background }));
+        dispatch(createSchedule({ schedule: { name: copiedSchedule.name, background: copiedSchedule.background, position: { x: 0, y: 0 }, size: { width: copiedSchedule.size.width, height: copiedSchedule.size.height } } }));
       }
     } else {
       return

@@ -1,10 +1,22 @@
+export type SchedulePosition = {
+  x: number,
+  y: number
+}
+
+export type ScheduleSize = {
+  width: string | null,
+  height: string | null
+}
+
 export type Schedule = {
   name: string,
-  background: string
+  background: string,
+  position: SchedulePosition,
+  size: ScheduleSize
 }
 
 type ScheduleState = {
-  schedules: Schedule[]
+  schedules: Schedule[];
   copiedSchedule: Schedule;
 }
 
