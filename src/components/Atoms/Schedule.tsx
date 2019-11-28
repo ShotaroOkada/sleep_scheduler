@@ -60,7 +60,7 @@ const Schedule: React.FC<Props> = (props) => {
         topRight: false, bottomRight: true, bottomLeft: false, topLeft: false
       }}
     >
-      {`${index}:${scheduleName}`}
+      {scheduleName}
     </StyledRnd >
   )
 }
@@ -71,7 +71,7 @@ type WrapperProps = {
   background: string
 }
 
-const StyledRnd = styled(Rnd)<WrapperProps>((props: WrapperProps) => `
+const StyledRnd = styled(Rnd)<WrapperProps>(props => `
   background: ${props.background};
   font-family: ${Fonts.FamilyRoboto};
   color: white;
