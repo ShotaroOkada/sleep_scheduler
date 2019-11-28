@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Fonts from '../../utilsUI/Fonts';
 import { Rnd, DraggableData, Position, ResizableDelta } from 'react-rnd';
@@ -20,35 +20,25 @@ type Props = {
 // タイムラインに貼り付ける予定が書かれたブロック
 const Schedule: React.FC<Props> = (props) => {
   const { scheduleName, background, index, position, size } = props;
-  const [x, setX] = useState(position.x);
-  const [y, setY] = useState(position.y);
-  const [width, setWidth] = useState(size.width);
-  const [height, setHeight] = useState(size.height);
   const dispatch = useDispatch();
 
   const onDrag = (e: DraggableEvent, data: DraggableData) => {
-    if (x === data.x && y === data.y) {
+    if (position.x === data.x && position.y === data.y) {
       return
     }
-    setX(data.x);
-    setY(data.y);
     dispatch(positionChangeSchedule({ index, position: { x: data.x, y: data.y } }))
   }
 
   const onResizeStop = (e: MouseEvent | TouchEvent, dir: ResizeDirection, ref: HTMLDivElement, delta: ResizableDelta, position: Position) => {
-    if (width === ref.style.width && height === ref.style.height) {
+    if (size.width === ref.style.width && size.height === ref.style.height) {
       return
     }
-    setX(position.x);
-    setY(position.y);
-    setWidth(ref.style.width);
-    setHeight(ref.style.height);
     dispatch(sizeChangeSchedule({ index, position: { x: position.x, y: position.y }, size: { width: ref.style.width, height: ref.style.height } }))
   }
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.metaKey && e.key === 'c') {
-      dispatch(copiedSchedule({ schedule: { name: scheduleName, background, position: { x, y }, size: { width, height } } }))
+      dispatch(copiedSchedule({ schedule: { name: scheduleName, background, position, size } }))
     } else if (e.key === 'Backspace') {
       dispatch(deleteSchedule({ index }))
     } else {
@@ -61,11 +51,8 @@ const Schedule: React.FC<Props> = (props) => {
       tabIndex={0}
       onKeyDown={onKeyDown}
       background={background}
-      position={{ x, y }}
-      size={{
-        width,
-        height
-      }}
+      position={position}
+      size={size}
       onDragStop={onDrag}
       onResizeStop={onResizeStop}
       enableResizing={{
@@ -93,6 +80,6 @@ const StyledRnd = styled(Rnd)<WrapperProps>((props: WrapperProps) => `
   font-size: ${Fonts.SizeDefault}px;
   &:focus{
     outline: none;
-    box-shadow: 2px 2px 4px ${Colors.LightGray};
+    box-shadow: 3px 3px 5px ${Colors.LightGray};
   }
 `)

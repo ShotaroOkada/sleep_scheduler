@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CreateSchedule from './Molecules/CreateSchedule';
-import Schedules from './Organisms/Schedules';
+import Schedules from './Molecules/Schedules';
 import { useSelector, useDispatch } from 'react-redux';
 import RootState from '../states';
 import { createSchedule } from '../actions/Schedules/ActionCreator';
