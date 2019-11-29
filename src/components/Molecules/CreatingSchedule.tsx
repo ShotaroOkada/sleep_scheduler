@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { createSchedule } from '../../actions/Schedules/ActionCreator';
-import Colors from '../../utilsUI/Color'
+import Color from '../../utilsUI/Color'
 import Button from '../Atoms/Button';
 import Form from '../Atoms/From';
 
-const CreateSchedule = () => {
+const CreatingSchedule = () => {
   const dispatch = useDispatch();
   const [inputSchedule, setInputSchedule] = useState('');
 
@@ -22,20 +22,21 @@ const CreateSchedule = () => {
     if (inputSchedule === '') {
       return
     }
-    dispatch(createSchedule({ schedule: { name: inputSchedule, background: Colors.RoyalBlue, position: { x: 0, y: 0 }, size: { width: 'auto', height: 'auto' } } }))
+    dispatch(createSchedule({ schedule: { name: inputSchedule, background: Color.RoyalBlue, position: { x: 0, y: 0 }, size: { width: 'auto', height: 'auto' } } }))
     setInputSchedule('');
   }
 
   return (
-    <Wrapper>
+    <StyledCreatingSchedule>
       <Form onChange={onChange} value={inputSchedule} />
       <Button onClick={onClick} />
-    </Wrapper>
+    </StyledCreatingSchedule>
   )
 }
 
-export default CreateSchedule;
+export default CreatingSchedule;
 
-const Wrapper = styled.div`
-
+const StyledCreatingSchedule = styled.div`
+  height: auto;
+  margin-bottom: 10px;
 `

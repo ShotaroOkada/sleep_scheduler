@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Colors from '../../utilsUI/Color';
-import Fonts from '../../utilsUI/Fonts';
+import Color from '../../utilsUI/Color';
+import Font from '../../utilsUI/Font';
 
 type Props = {
   time: string
@@ -11,16 +11,16 @@ type Props = {
 const Time: React.FC<Props> = (props) => {
   const { time } = props
   return (
-    <Wrapper>
-      <TextTime>{time}</TextTime>
-    </Wrapper>
+    <StyledTime>
+      <StyledText>{time}</StyledText>
+    </StyledTime>
   )
 }
 
 export default Time;
 
-const Wrapper = styled.span`
-  margin-bottom: 10px;
+const StyledTime = styled.span`
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   &::after {
@@ -28,14 +28,14 @@ const Wrapper = styled.span`
     height: 1px;
     width: 20vw;
     display: block;
-    background: ${Colors.LightGray};
+    background: ${Color.LightGray};
     margin-left: .4em;
   }
 `
-const TextTime = styled.span`
-  width: 100px;
+const StyledText = styled.span`
+  width: 60px;
   text-align: right;
-  font-family: ${Fonts.FamilyRoboto};
-  color: ${Colors.LightGray};
-  font-size: ${Fonts.SizeDefault}px;
+  font-family: ${Font.FamilyRoboto};
+  color: ${Color.LightGray};
+  font-size: ${Font.SizeDefault}px;
 `

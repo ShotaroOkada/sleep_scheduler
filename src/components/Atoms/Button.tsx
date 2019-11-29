@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fonts from '../../utilsUI/Fonts';
-import Colors from '../../utilsUI/Color';
+import Fonts from '../../utilsUI/Font';
+import Color from '../../utilsUI/Color';
 
 type Props = {
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -20,7 +20,7 @@ export default Button;
 
 const StyledButton = styled.button`
   font-size: ${Fonts.SizeDefault}px;
-  color: ${Colors.LightGray};
+  color: ${Color.LightGray};
   font-family: ${Fonts.FamilyRoboto};
   border-radius: 3px;
   text-decoration: none;
@@ -28,9 +28,9 @@ const StyledButton = styled.button`
   margin-left: 5px;
   &:focus {
     outline: none;
-    background: ${Colors.WhiteSmoke}
+    background: ${Color.WhiteSmoke}
   }
   &:hover {
-    background: ${Colors.WhiteSmoke}
+    background: ${Color.WhiteSmoke}
   }
 `

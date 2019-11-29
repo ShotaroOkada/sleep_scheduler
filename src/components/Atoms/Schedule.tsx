@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fonts from '../../utilsUI/Fonts';
+import Fonts from '../../utilsUI/Font';
 import { Rnd, DraggableData, Position, ResizableDelta } from 'react-rnd';
 import { DraggableEvent } from 'react-draggable';
-import Colors from '../../utilsUI/Color';
+import Color from '../../utilsUI/Color';
 import { useDispatch } from 'react-redux';
 import { copiedSchedule, deleteSchedule, positionChangeSchedule, sizeChangeSchedule } from '../../actions/Schedules/ActionCreator';
 import { SchedulePosition, ScheduleSize } from '../../states/Schedules';
@@ -47,7 +47,7 @@ const Schedule: React.FC<Props> = (props) => {
   }
 
   return (
-    <StyledRnd
+    <StyledSchedule
       tabIndex={0}
       onKeyDown={onKeyDown}
       background={background}
@@ -61,17 +61,17 @@ const Schedule: React.FC<Props> = (props) => {
       }}
     >
       {scheduleName}
-    </StyledRnd >
+    </StyledSchedule >
   )
 }
 
 export default Schedule
 
-type WrapperProps = {
+type StyledScheduleProps = {
   background: string
 }
 
-const StyledRnd = styled(Rnd)<WrapperProps>(props => `
+const StyledSchedule = styled(Rnd)<StyledScheduleProps>(props => `
   background: ${props.background};
   font-family: ${Fonts.FamilyRoboto};
   color: white;
@@ -80,6 +80,6 @@ const StyledRnd = styled(Rnd)<WrapperProps>(props => `
   font-size: ${Fonts.SizeDefault}px;
   &:focus{
     outline: none;
-    box-shadow: 3px 3px 5px ${Colors.LightGray};
+    box-shadow: 3px 3px 5px ${Color.LightGray};
   }
 `)

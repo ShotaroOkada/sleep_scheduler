@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import CreateSchedule from './Molecules/CreateSchedule';
-import Schedules from './Molecules/Schedules';
 import { useSelector, useDispatch } from 'react-redux';
 import RootState from '../states';
 import { createSchedule } from '../actions/Schedules/ActionCreator';
+import HomeLayout from './Templates/HomeLayout';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,8 +23,9 @@ const App: React.FC = () => {
   return (
     <Wrapper onKeyDown={onKeyDown} tabIndex={0}>
       {/* <TimeLine /> */}
-      <Schedules />
-      <CreateSchedule />
+      {/* <Schedules />
+      <CreateSchedule /> */}
+      <HomeLayout />
     </Wrapper>
   );
 }

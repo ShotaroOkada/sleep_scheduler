@@ -8,17 +8,17 @@ const Times: string[] = [
 
 const TimeLine: React.FC = () => {
   return (
-    <Wrapper>
+    <StyledTimeLine>
       {Times.map((time, index) => {
         return <Time key={index} time={time} />
       })}
-    </Wrapper>
+    </StyledTimeLine>
   )
 }
 
 export default TimeLine;
 
-const Wrapper = styled.div`
+const StyledTimeLine = styled.div`
   overflow: scroll;
   position: fixed;
   left: 50%;
