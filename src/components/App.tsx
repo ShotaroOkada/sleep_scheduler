@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import RootState from '../states';
 import { createSchedule } from '../actions/Schedules/ActionCreator';
-import HomeLayout from './Templates/HomeLayout';
+import HomeTemplate from './Templates/HomeTemplate';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const copiedSchedule = useSelector<RootState, RootState['scheduleState']['copiedSchedule']>(state => state.scheduleState.copiedSchedule);
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.metaKey && e.key === 'v') {
+      console.log('command v')
       if (copiedSchedule.name === '') {
         return
       } else {
@@ -22,10 +23,7 @@ const App: React.FC = () => {
 
   return (
     <Wrapper onKeyDown={onKeyDown} tabIndex={0}>
-      {/* <TimeLine /> */}
-      {/* <Schedules />
-      <CreateSchedule /> */}
-      <HomeLayout />
+      <HomeTemplate />
     </Wrapper>
   );
 }
@@ -33,5 +31,6 @@ const App: React.FC = () => {
 export default App;
 
 const Wrapper = styled.div`
+  height: 100%;
   outline: none; /* フォーカス時の青枠を外す*/
 `

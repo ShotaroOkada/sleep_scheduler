@@ -4,7 +4,7 @@ import FeelingArea from '../Organisms/FeelingArea';
 import TimeLineArea from '../Organisms/TimeLineArea';
 import ScheduleArea from '../Organisms/ScheduleArea';
 
-const HomeLayout = () => {
+const HomeTemplate: React.FC = () => {
   return (
     <GridLayout>
       <FeelingArea />
@@ -14,7 +14,7 @@ const HomeLayout = () => {
   )
 }
 
-export default HomeLayout;
+export default HomeTemplate;
 
 export enum HomeGridArea {
   Feeling = 'Feeling',

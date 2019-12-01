@@ -6,7 +6,7 @@ import Color from '../../utilsUI/Color'
 import Button from '../Atoms/Button';
 import Form from '../Atoms/From';
 
-const CreatingSchedule = () => {
+const CreatingSchedule: React.FC = () => {
   const dispatch = useDispatch();
   const [inputSchedule, setInputSchedule] = useState('');
 
@@ -37,6 +37,5 @@ const CreatingSchedule = () => {
 export default CreatingSchedule;
 
 const StyledCreatingSchedule = styled.div`
-  height: auto;
   margin-bottom: 10px;
 `

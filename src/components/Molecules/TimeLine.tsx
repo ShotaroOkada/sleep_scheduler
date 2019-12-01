@@ -19,6 +19,7 @@ const TimeLine: React.FC = () => {
 export default TimeLine;
 
 const StyledTimeLine = styled.div`
+  height: 100%;
   overflow: scroll;
   position: fixed;
   left: 50%;

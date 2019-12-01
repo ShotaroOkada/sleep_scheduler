@@ -18,5 +18,5 @@ const Schedules: React.FC = () => {
 export default Schedules;
 
 const StyledSchedules = styled.div`
-  height: auto;
+
 `
