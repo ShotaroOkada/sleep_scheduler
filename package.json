@@ -23,8 +23,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "styled-components": "^4.4.1",
-    "typesafe-actions": "^5.1.0",
-    "typescript": "3.7.2"
+    "typesafe-actions": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2",
+    "typescript-styled-plugin": "^0.15.0"
   }
 }

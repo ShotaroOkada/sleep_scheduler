@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import FeelingArea from '../Organisms/FeelingArea';
+import QuestionArea from '../Organisms/QuestionArea';
 import TimeLineArea from '../Organisms/TimeLineArea';
 import ScheduleArea from '../Organisms/ScheduleArea';
 
 const HomeTemplate: React.FC = () => {
   return (
     <GridLayout>
-      <FeelingArea />
+      <QuestionArea />
       <TimeLineArea />
       <ScheduleArea />
     </GridLayout>

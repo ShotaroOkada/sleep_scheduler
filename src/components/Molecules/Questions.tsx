@@ -1,20 +1,19 @@
 import React from 'react';
-import GridArea from '../../utilsUI/GridArea';
-import { HomeGridArea } from '../Templates/HomeTemplate';
+import Label from '../Atoms/Label';
 import SelectBox from '../Atoms/SelectBox';
 
-const FeelingArea: React.FC = () => {
+const Questions: React.FC = () => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ]
   return (
-    <GridArea area={HomeGridArea.Feeling}>
-      FeelingArea
+    <div>
+      <Label name='ほげほげですか？' />
       <SelectBox options={options} />
-    </GridArea>
+    </div>
   )
-};
+}
 
-export default FeelingArea;
+export default Questions;

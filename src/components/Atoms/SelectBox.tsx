@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { default as Select } from 'react-select';
+import React, { useState, CSSProperties } from 'react';
+import { default as Select, Styles } from 'react-select';
 import { ValueType } from 'react-select/src/types';
+import Font from '../../utilsUI/Font';
+import Color from '../../utilsUI/Color';
 
 type OptionType = {
   value: string | null,
@@ -19,18 +20,34 @@ const SelectBox: React.FC<Props> = props => {
   const handleChange = (selectedOption: ValueType<OptionType>) => {
     setSelectedOption(selectedOption as OptionType)
   }
+
   return (
-    <StyledSelectBox
+    <Select
       value={selectedOption}
       onChange={handleChange}
       options={options}
-      area-hidden={false}
+      styles={styles}
     />
   )
 };
 
 export default SelectBox;
 
-const StyledSelectBox = styled(Select)`
-  
-`
+const styles: Partial<Styles> = {
+  control: (base: CSSProperties) => ({
+    ...base,
+    fontFamily: Font.FamilyRoboto as string,
+    fontSize: Font.SizeDefault,
+    color: Color.LightGray,
+  }),
+  menu: (base: CSSProperties) => ({
+    ...base,
+    fontFamily: Font.FamilyRoboto as string,
+    fontSize: Font.SizeDefault,
+    color: Color.LightGray
+  })
+};
+
+
+
+
