@@ -10,14 +10,15 @@ type Props = {
 const Label: React.FC<Props> = (props) => {
   const { name } = props;
   return (
-    <StyledLabel>{name}</StyledLabel>
+    <StyledQuestionLabel>{name}</StyledQuestionLabel>
   )
 }
 
 export default Label;
 
-const StyledLabel = styled.div`
+const StyledQuestionLabel = styled.div`
 color: ${Color.LightGray};
 font-size: ${Font.SizeDefault};
 font-family: ${Font.FamilyRoboto};
+margin-top: 20px;
 `

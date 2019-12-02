@@ -4,21 +4,21 @@ import { ValueType } from 'react-select/src/types';
 import Font from '../../utilsUI/Font';
 import Color from '../../utilsUI/Color';
 
-type OptionType = {
+export type Option = {
   value: string | null,
   label: string | null
 }
 
 type Props = {
-  options: OptionType[]
+  options: Option[]
 }
 
 const SelectBox: React.FC<Props> = props => {
   const { options } = props
-  const [selectedOption, setSelectedOption] = useState<OptionType>({ value: null, label: null });
+  const [selectedOption, setSelectedOption] = useState<Option>({ value: null, label: null });
 
-  const handleChange = (selectedOption: ValueType<OptionType>) => {
-    setSelectedOption(selectedOption as OptionType)
+  const handleChange = (selectedOption: ValueType<Option>) => {
+    setSelectedOption(selectedOption as Option)
   }
 
   return (
@@ -34,16 +34,18 @@ const SelectBox: React.FC<Props> = props => {
 export default SelectBox;
 
 const styles: Partial<Styles> = {
+  option: (provided) => ({
+    ...provided,
+    color: Color.LightGray
+  }),
   control: (base: CSSProperties) => ({
     ...base,
     fontFamily: Font.FamilyRoboto as string,
-    fontSize: Font.SizeDefault,
-    color: Color.LightGray,
+    color: Color.LightGray
   }),
   menu: (base: CSSProperties) => ({
     ...base,
     fontFamily: Font.FamilyRoboto as string,
-    fontSize: Font.SizeDefault,
     color: Color.LightGray
   })
 };
