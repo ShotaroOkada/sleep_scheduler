@@ -1,8 +1,8 @@
 import React, { useState, CSSProperties } from 'react';
 import { default as Select, Styles } from 'react-select';
 import { ValueType } from 'react-select/src/types';
-import Font from '../../utilsUI/Font';
-import Color from '../../utilsUI/Color';
+import { FontFamily } from '../../styles/Font';
+import Color from '../../styles/Color';
 
 export type Option = {
   value: string | null,
@@ -40,12 +40,12 @@ const styles: Partial<Styles> = {
   }),
   control: (base: CSSProperties) => ({
     ...base,
-    fontFamily: Font.FamilyRoboto as string,
+    fontFamily: FontFamily.Roboto as string,
     color: Color.LightGray
   }),
   menu: (base: CSSProperties) => ({
     ...base,
-    fontFamily: Font.FamilyRoboto as string,
+    fontFamily: FontFamily.Roboto as string,
     color: Color.LightGray
   })
 };

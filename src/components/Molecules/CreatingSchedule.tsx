@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { createSchedule } from '../../actions/Schedules/ActionCreator';
-import Color from '../../utilsUI/Color'
+import Color from '../../styles/Color'
 import Button from '../Atoms/Button';
 import Form from '../Atoms/Form';
 

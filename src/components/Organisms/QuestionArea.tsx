@@ -1,5 +1,5 @@
 import React from 'react';
-import GridArea from '../../utilsUI/GridArea';
+import GridArea from '../GridArea';
 import { HomeGridArea } from '../Templates/HomeTemplate';
 import Questions from '../Molecules/Questions';
 

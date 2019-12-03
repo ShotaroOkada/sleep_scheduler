@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fonts from '../../utilsUI/Font';
-import Color from '../../utilsUI/Color';
+import { FontSize, FontFamily } from '../../styles/Font';
+import Color from '../../styles/Color';
 
 type Props = {
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -19,9 +19,9 @@ const Button: React.FC<Props> = (props) => {
 export default Button;
 
 const StyledButton = styled.button`
-  font-size: ${Fonts.SizeDefault}px;
+  font-size: ${FontSize.Small}px;
   color: ${Color.LightGray};
-  font-family: ${Fonts.FamilyRoboto};
+  font-family: ${FontFamily.Roboto};
   border-radius: 3px;
   text-decoration: none;
   padding: 5px 7px 3px 7px;

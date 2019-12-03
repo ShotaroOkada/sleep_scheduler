@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Color from '../../utilsUI/Color';
-import Font from '../../utilsUI/Font';
+import Color from '../../styles/Color';
+import { FontSize, FontFamily } from '../../styles/Font';
 
 type Props = {
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
@@ -22,8 +22,8 @@ const StyledForm = styled.input`
   -moz-appearance: none;
   appearance: none;
   color: ${Color.LightGray};
-  font-size: ${Font.SizeDefault};
-  font-family: ${Font.FamilyRoboto};
+  font-size: ${FontSize.Small};
+  font-family: ${FontFamily.Roboto};
   border-radius: 3px;
   padding: 5px 7px 5px 3px;
   &:focus {

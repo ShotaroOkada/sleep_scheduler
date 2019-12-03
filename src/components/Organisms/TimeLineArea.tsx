@@ -1,6 +1,6 @@
 import React from 'react';
 import TimeLine from '../Molecules/TimeLine';
-import GridArea from '../../utilsUI/GridArea';
+import GridArea from '../GridArea';
 import { HomeGridArea } from '../Templates/HomeTemplate';
 import styled from 'styled-components';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import CreatingSchedule from '../Molecules/CreatingSchedule';
 import Schedules from '../Molecules/Schedules';
-import GridArea from '../../utilsUI/GridArea';
+import GridArea from '../GridArea';
 import { HomeGridArea } from '../Templates/HomeTemplate';
 import styled from 'styled-components';
 

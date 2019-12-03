@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fonts from '../../utilsUI/Font';
+import { FontSize, FontFamily } from '../../styles/Font';
 import { Rnd, DraggableData, Position, ResizableDelta } from 'react-rnd';
 import { DraggableEvent } from 'react-draggable';
-import Color from '../../utilsUI/Color';
+import Color from '../../styles/Color';
 import { useDispatch } from 'react-redux';
 import { copiedSchedule, deleteSchedule, positionChangeSchedule, sizeChangeSchedule } from '../../actions/Schedules/ActionCreator';
 import { SchedulePosition, ScheduleSize } from '../../states/Schedules';
@@ -73,11 +73,11 @@ type StyledScheduleProps = {
 
 const StyledSchedule = styled(Rnd)<StyledScheduleProps>(props => `
   background: ${props.background};
-  font-family: ${Fonts.FamilyRoboto};
+  font-family: ${FontFamily.Roboto};
   color: white;
   padding: 8px;
   border-radius: 5px;
-  font-size: ${Fonts.SizeDefault}px;
+  font-size: ${FontSize.Small}px;
   &:focus{
     outline: none;
     box-shadow: 3px 3px 5px ${Color.LightGray};

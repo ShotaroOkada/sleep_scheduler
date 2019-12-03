@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Color from '../../utilsUI/Color';
-import Font from '../../utilsUI/Font';
+import Color from '../../styles/Color';
+import { FontSize, FontFamily } from '../../styles/Font';
 
 type Props = {
   time: string
@@ -35,7 +35,7 @@ const StyledTime = styled.span`
 const StyledText = styled.span`
   width: 60px;
   text-align: right;
-  font-family: ${Font.FamilyRoboto};
+  font-family: ${FontFamily.Roboto};
   color: ${Color.LightGray};
-  font-size: ${Font.SizeDefault}px;
+  font-size: ${FontSize.Small}px;
 `

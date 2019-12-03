@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Color from '../../utilsUI/Color';
-import Font from '../../utilsUI/Font';
+import Color from '../../styles/Color';
+import { FontSize, FontFamily } from '../../styles/Font';
 
 type Props = {
   name: string
@@ -18,7 +18,7 @@ export default Label;
 
 const StyledQuestionLabel = styled.div`
 color: ${Color.LightGray};
-font-size: ${Font.SizeDefault};
-font-family: ${Font.FamilyRoboto};
+font-size: ${FontSize.Small};
+font-family: ${FontFamily.Roboto};
 margin-top: 20px;
 `
