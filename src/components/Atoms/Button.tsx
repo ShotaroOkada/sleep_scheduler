@@ -19,7 +19,7 @@ const Button: React.FC<Props> = (props) => {
 export default Button;
 
 const StyledButton = styled.button`
-  font-size: ${FontSize.Small}px;
+  font-size: ${FontSize.Medium}px;
   color: ${Color.LightGray};
   font-family: ${FontFamily.Roboto};
   border-radius: 3px;

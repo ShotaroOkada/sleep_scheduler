@@ -77,7 +77,7 @@ const StyledSchedule = styled(Rnd)<StyledScheduleProps>(props => `
   color: white;
   padding: 8px;
   border-radius: 5px;
-  font-size: ${FontSize.Small}px;
+  font-size: ${FontSize.Medium}px;
   &:focus{
     outline: none;
     box-shadow: 3px 3px 5px ${Color.LightGray};

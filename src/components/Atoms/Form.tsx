@@ -22,7 +22,7 @@ const StyledForm = styled.input`
   -moz-appearance: none;
   appearance: none;
   color: ${Color.LightGray};
-  font-size: ${FontSize.Small};
+  font-size: ${FontSize.Medium}px;
   font-family: ${FontFamily.Roboto};
   border-radius: 3px;
   padding: 5px 7px 5px 3px;

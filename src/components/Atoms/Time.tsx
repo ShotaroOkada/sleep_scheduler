@@ -19,7 +19,7 @@ const Time: React.FC<Props> = (props) => {
 
 export default Time;
 
-const StyledTime = styled.span`
+const StyledTime = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;

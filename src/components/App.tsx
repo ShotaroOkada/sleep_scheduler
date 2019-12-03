@@ -33,4 +33,5 @@ export default App;
 const Wrapper = styled.div`
   height: 100%;
   outline: none; /* フォーカス時の青枠を外す*/
+  overflow: hidden;
 `

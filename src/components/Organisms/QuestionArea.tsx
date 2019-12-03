@@ -5,7 +5,7 @@ import Questions from '../Molecules/Questions';
 
 const QuestionArea: React.FC = () => {
   return (
-    <GridArea area={HomeGridArea.Feeling}>
+    <GridArea area={HomeGridArea.Question}>
       <Questions />
     </GridArea>
   )

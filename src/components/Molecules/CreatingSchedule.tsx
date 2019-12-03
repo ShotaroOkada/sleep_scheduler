@@ -37,5 +37,7 @@ const CreatingSchedule: React.FC = () => {
 export default CreatingSchedule;
 
 const StyledCreatingSchedule = styled.div`
+  position: absolute;
+  right: 10px;
   margin-bottom: 10px;
 `
